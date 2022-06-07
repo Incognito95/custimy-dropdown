@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="dropdown">
+            <button class="btn" type="button" data-toggle="dropdown">+ Add Filter</button>
+            <ul class="dropdown-menu">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">Users</a></li>
+                    <li role="presentation"><a href="integrations.html">Integrations</a></li>
+                </ul>
+                <input class="form-control" id="myInput" type="text" placeholder="Search Options">
+                <li><a href="#"><img src="images/person-icon.png"> Louie Popp</a></li>
+                <li><a href="#"><img src="images/person-icon.png"> Jonas Rafn</a></li>
+                <li><a href="#"><img src="images/person-icon.png"> Fiona Rakipi</a></li>
+                <li><a href="#"><img src="images/person-icon.png"> Martin Navne</a></li>
+                <li><a href="#"><img src="images/person-icon.png"> Kristoffer Degn</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $(".dropdown-menu li").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
